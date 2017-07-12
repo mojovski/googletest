@@ -79,6 +79,10 @@ if (MSVC AND MSVC_VERSION EQUAL 1700)
   add_definitions(/D _VARIADIC_MAX=10)
 endif()
 
+if (MSVC)
+	set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd")
+endif()
+
 ########################################################################
 #
 # Defines the gtest & gtest_main libraries.  User tests should link
